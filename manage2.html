@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Custom Font Example</title>
+        <!-- Import the Google Fonts using the @import rule -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+        body {
+            font-family: Barlow, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        h1 {
+            font-family: 'Barlow', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #800000;
+        }
+
+        @font-face {
+            font-family: 'Barlow';
+            src: url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap') format('woff2');
+        }
+
+        </style>
+    </head>    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Position Example</title>
+    <style>
+        
+        .image-container {
+            position: relative; 
+        }
+
+        img {
+            position: absolute; 
+            top: 400px; /* Position from the top of the container */
+            left: 1000px; /* Position from the left of the container */
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="agdiner.png" alt="Description of the image" width="400" height="400">
+    </div>
+</body>
+<style></style>
+<body>
+    
+    <h1 class="centered-title">Welcome to Your Orders!</h1>
+
+    
+    <p class="small-text">The following 25 orders and their totals are displayed, using data from Jewlery Store. </p>
+</body>
+<body>
+    
+    <h1>Enter a Order Number (1-25) for Details:</h1>
+    <form id="numberForm">
+        <label for="numberInput">Number:</label>
+        <input type="number" id="numberInput" name="numberInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <p id="result"></p>
+
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+            console.log("HI")
+            
+            var number = parseInt(document.getElementById('numberInput').value);
+            var jsonStrings = [{"order_number": "1", "date received": "6/25/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "0", "number of anklets": "2", "number of earrings": "4", "SUM": "10"}, {"order_number": "2", "date received": "6/26/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "3", "date received": "6/27/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "0", "number of earrings": "4", "SUM": "10"}, {"order_number": "4", "date received": "6/28/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "4", "number of anklets": "0", "number of earrings": "0", "SUM": "6"}, {"order_number": "5", "date received": "6/29/2022", "number of bracelets": "3", "number of necklaces": "1", "number of rings": "0", "number of anklets": "1", "number of earrings": "0", "SUM": "5"}, {"order_number": "6", "date received": "6/30/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "7", "date received": "7/1/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "0", "number of anklets": "3", "number of earrings": "0", "SUM": "5"}, {"order_number": "8", "date received": "7/2/2022", "number of bracelets": "1", "number of necklaces": "3", "number of rings": "0", "number of anklets": "3", "number of earrings": "0", "SUM": "7"}, {"order_number": "9", "date received": "7/3/2022", "number of bracelets": "0", "number of necklaces": "0", "number of rings": "2", "number of anklets": "0", "number of earrings": "2", "SUM": "4"}, {"order_number": "10", "date received": "7/4/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "11", "date received": "7/5/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "0", "SUM": "8"}, {"order_number": "12", "date received": "7/6/2022", "number of bracelets": "1", "number of necklaces": "1", "number of rings": "1", "number of anklets": "1", "number of earrings": "2", "SUM": "6"}, {"order_number": "13", "date received": "7/7/2022", "number of bracelets": "1", "number of necklaces": "0", "number of rings": "2", "number of anklets": "0", "number of earrings": "2", "SUM": "5"}, {"order_number": "14", "date received": "7/8/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "0", "number of earrings": "4", "SUM": "10"}, {"order_number": "15", "date received": "7/9/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "4", "SUM": "12"}, {"order_number": "16", "date received": "7/10/2022", "number of bracelets": "1", "number of necklaces": "2", "number of rings": "2", "number of anklets": "0", "number of earrings": "0", "SUM": "5"}, {"order_number": "17", "date received": "7/11/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "3", "number of earrings": "4", "SUM": "13"}, {"order_number": "18", "date received": "7/12/2022", "number of bracelets": "1", "number of necklaces": "4", "number of rings": "1", "number of anklets": "1", "number of earrings": "2", "SUM": "9"}, {"order_number": "19", "date received": "7/13/2022", "number of bracelets": "3", "number of necklaces": "1", "number of rings": "2", "number of anklets": "1", "number of earrings": "0", "SUM": "7"}, {"order_number": "20", "date received": "7/14/2022", "number of bracelets": "3", "number of necklaces": "4", "number of rings": "0", "number of anklets": "2", "number of earrings": "2", "SUM": "11"}, {"order_number": "21", "date received": "7/15/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "10"}, {"order_number": "22", "date received": "7/16/2022", "number of bracelets": "2", "number of necklaces": "1", "number of rings": "4", "number of anklets": "2", "number of earrings": "4", "SUM": "13"}, {"order_number": "23", "date received": "7/17/2022", "number of bracelets": "2", "number of necklaces": "1", "number of rings": "0", "number of anklets": "2", "number of earrings": "2", "SUM": "7"}, {"order_number": "24", "date received": "7/18/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "0", "number of anklets": "2", "number of earrings": "0", "SUM": "6"}, {"order_number": "25", "date received": "7/19/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "3", "number of earrings": "4", "SUM": "13"}];
+
+            // Check if the input is a valid number
+            if (!isNaN(number)) {
+                // Display the input number
+                document.getElementById('result').textContent = "The details for Order " + number + " are: received on: " + jsonStrings[number-1]["date received"]+", number of bracelets: "+jsonStrings[number-1]["number of bracelets"]+", number of necklaces: "+jsonStrings[number-1]["number of necklaces"]+", number of anklets: "+jsonStrings[number-1]["number of anklets"]+", number of earrings: "+jsonStrings[number-1]["number of earrings"]+", number of rings: "+jsonStrings[number-1]["number of rings"];
+            } else {
+                // Display an error message if the input is not a valid number
+                document.getElementById('result').textContent = 'Please enter a valid number.';
+            }
+            
+        });
+    </script>
+</body>
+<body>
+    <div id="output"></div>
+
+    <script>
+        
+
+        // Create an array of JSON strings
+        var jsonStrings = [{"order_number": "1", "date received": "6/25/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "0", "number of anklets": "2", "number of earrings": "4", "SUM": "10"}, {"order_number": "2", "date received": "6/26/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "3", "date received": "6/27/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "0", "number of earrings": "4", "SUM": "10"}, {"order_number": "4", "date received": "6/28/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "4", "number of anklets": "0", "number of earrings": "0", "SUM": "6"}, {"order_number": "5", "date received": "6/29/2022", "number of bracelets": "3", "number of necklaces": "1", "number of rings": "0", "number of anklets": "1", "number of earrings": "0", "SUM": "5"}, {"order_number": "6", "date received": "6/30/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "7", "date received": "7/1/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "0", "number of anklets": "3", "number of earrings": "0", "SUM": "5"}, {"order_number": "8", "date received": "7/2/2022", "number of bracelets": "1", "number of necklaces": "3", "number of rings": "0", "number of anklets": "3", "number of earrings": "0", "SUM": "7"}, {"order_number": "9", "date received": "7/3/2022", "number of bracelets": "0", "number of necklaces": "0", "number of rings": "2", "number of anklets": "0", "number of earrings": "2", "SUM": "4"}, {"order_number": "10", "date received": "7/4/2022", "number of bracelets": "2", "number of necklaces": "0", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "8"}, {"order_number": "11", "date received": "7/5/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "0", "SUM": "8"}, {"order_number": "12", "date received": "7/6/2022", "number of bracelets": "1", "number of necklaces": "1", "number of rings": "1", "number of anklets": "1", "number of earrings": "2", "SUM": "6"}, {"order_number": "13", "date received": "7/7/2022", "number of bracelets": "1", "number of necklaces": "0", "number of rings": "2", "number of anklets": "0", "number of earrings": "2", "SUM": "5"}, {"order_number": "14", "date received": "7/8/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "0", "number of earrings": "4", "SUM": "10"}, {"order_number": "15", "date received": "7/9/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "4", "SUM": "12"}, {"order_number": "16", "date received": "7/10/2022", "number of bracelets": "1", "number of necklaces": "2", "number of rings": "2", "number of anklets": "0", "number of earrings": "0", "SUM": "5"}, {"order_number": "17", "date received": "7/11/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "3", "number of earrings": "4", "SUM": "13"}, {"order_number": "18", "date received": "7/12/2022", "number of bracelets": "1", "number of necklaces": "4", "number of rings": "1", "number of anklets": "1", "number of earrings": "2", "SUM": "9"}, {"order_number": "19", "date received": "7/13/2022", "number of bracelets": "3", "number of necklaces": "1", "number of rings": "2", "number of anklets": "1", "number of earrings": "0", "SUM": "7"}, {"order_number": "20", "date received": "7/14/2022", "number of bracelets": "3", "number of necklaces": "4", "number of rings": "0", "number of anklets": "2", "number of earrings": "2", "SUM": "11"}, {"order_number": "21", "date received": "7/15/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "2", "number of anklets": "2", "number of earrings": "2", "SUM": "10"}, {"order_number": "22", "date received": "7/16/2022", "number of bracelets": "2", "number of necklaces": "1", "number of rings": "4", "number of anklets": "2", "number of earrings": "4", "SUM": "13"}, {"order_number": "23", "date received": "7/17/2022", "number of bracelets": "2", "number of necklaces": "1", "number of rings": "0", "number of anklets": "2", "number of earrings": "2", "SUM": "7"}, {"order_number": "24", "date received": "7/18/2022", "number of bracelets": "2", "number of necklaces": "2", "number of rings": "0", "number of anklets": "2", "number of earrings": "0", "SUM": "6"}, {"order_number": "25", "date received": "7/19/2022", "number of bracelets": "0", "number of necklaces": "3", "number of rings": "3", "number of anklets": "3", "number of earrings": "4", "SUM": "13"}];
+
+        var outputElement = document.getElementById("output");
+
+        
+        for (var i = 0; i < jsonStrings.length; i++) {
+            var total = 0;
+            total+= jsonStrings[i]["number of bracelets"]*7+jsonStrings[i]["number of necklaces"]*15+jsonStrings[i]["number of rings"]*25+jsonStrings[i]["number of anklets"]*10+jsonStrings[i]["number of earrings"]*10;
+            var listItem = document.createElement("li"); 
+            listItem.textContent = "The total for order "+jsonStrings[i]["order_number"]+ " is $"+total; 
+            outputElement.appendChild(listItem); 
+        }
+
+
+    </script>
+    
+
+</body>
+
+</html>
+
+</head>
+
+</html>

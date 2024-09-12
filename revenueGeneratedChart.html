@@ -1,0 +1,102 @@
+<form id="labelForm">
+    <label for="dataLabel">Enter Label:</label>
+    <input type="text" id="dataLabel" name="dataLabel" placeholder="Enter label">
+    <button type="submit">Add Label</button>
+</form>
+<form id="costForm">
+    <label for="itemCost">Enter Item Cost:</label>
+    <input type="number" id="itemCost" name="itemCost" placeholder="Enter cost">
+    <button type="submit">Add Cost</button>
+</form>
+
+<form id="dataForm">
+    <label for="dataInput">Enter Num Orders of Each:</label>
+    <input type="text" id="dataInput" name="dataInput" placeholder="Enter data">
+    <button type="submit">Submit</button>
+</form>
+
+
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<!-- Include Chart.js from the downloaded file -->
+<!-- Include Chart.js from the downloaded file -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script>
+    const form = document.getElementById('dataForm');
+    const inputDataArray = [];
+    const itemCosts = []; 
+    const labelArray = []; 
+   
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [],
+            datasets: [{    
+                label: 'Amount Generated ($)',
+                data: [],
+                backgroundColor: 'rgba(176, 48, 96, 0.2)',
+                borderColor: 'rgba(176, 48, 96, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    
+    dataForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const dataInput = parseFloat(document.getElementById('dataInput').value);
+        if (!isNaN(dataInput)) {
+            inputDataArray.push(dataInput);
+            document.getElementById('dataInput').value = '';
+            updateChart(inputDataArray, itemCosts, labelArray);
+
+        } else {
+            alert('Please enter a valid number for data.');
+        }
+    });
+
+    
+    costForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const itemCost = parseFloat(document.getElementById('itemCost').value);
+        if (!isNaN(itemCost)) {
+            itemCosts.push(itemCost);
+            document.getElementById('itemCost').value = '';
+            updateChart(inputDataArray, itemCosts, labelArray);
+
+        } else {
+            alert('Please enter a valid number for item cost.');
+        }
+    });
+    labelForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const dataLabel = document.getElementById('dataLabel').value;
+    labelArray.push(dataLabel);
+    document.getElementById('dataLabel').value = '';
+    updateChart(inputDataArray, itemCosts, labelArray);
+
+    });
+
+   
+    function updateChart(dataArray, itemCosts, labels) {
+    
+    const totalCosts = dataArray.map((data, index) => data * itemCosts[index]);
+
+    // Update the chart labels and data
+    myChart.data.labels = labels;
+    myChart.data.datasets[0].data = totalCosts;
+    myChart.update();
+}
+
+</script>
