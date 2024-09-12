@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background-color: #fdf3e8;
+            justify-self:center;
+            text-align: center;
+            display: block;
+            position: absolute;
+            padding: 0px;
+        }
+
+        img {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            margin-right: 20px;
+            height: 150px;
+            width: 150px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color:#fdf3e8;
+            padding: 5x;
+            border-radius: 5px;
+            position: absolute;
+            right: 600px;
+            top: 50px;
+        }
+
+        h2 {
+            color: rgb(118,34,37);
+            font-size: 35px
+        }
+
+        h3 {
+            color: rgb(118,34,37);
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        p {
+            font-size: 20px;
+            color: rgb(118,34,37);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="greeting"></h2>
+        <h3 id="date"></h3>
+    </div>
+
+    <script>
+        const username = localStorage.getItem("username");
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const greetingElement = document.getElementById("greeting");
+        const dateElement = document.getElementById("date");
+
+        let greeting = "Good ";
+        if (hours < 12) {
+            greeting += "morning, ";
+        } else if (hours < 18) {
+            greeting += "afternoon, ";
+        } else {
+            greeting += "evening, ";
+        }
+
+        greeting += username + "!";
+        greetingElement.textContent = greeting;
+
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = new Date().toLocaleDateString(undefined, options);
+        dateElement.textContent = "Today is " + currentDate;
+    </script>
+</body>
+<img src="Rev.png">
+</html>
+<html>
+<head>
+    <style>
+
+        a, a:visited {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            -ms-transform: scale(2.0); /* IE 9 */
+            -webkit-transform: scale(2.0); /* Safari 3-8 */
+            transform: scale(2.0);
+        }
+
+        .orders {
+            background-color: rgb(118,34,36);
+            border: none;
+            border-radius: 10px;
+            outline:none;
+            color:#fdf3e8;
+            font-weight: 700;
+            font-family: 'Barlow', sans-serif;
+            font-size: 40px;
+            padding: 40px;
+            width: 650px;
+            height: 200px;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 15px;
+            text-decoration:none;
+            display: block;
+            position: absolute;
+            top: 300px;
+            left: 70px;
+            -moz-box-shadow: 0px 0px 5px 3px #000;
+            -webkit-box-shadow: 0px 0px 5px 3px #000;
+            box-shadow: 0px 0px 5px 3px #000;
+        }
+
+        .orders:hover {
+            background-color: #fdf3e8;
+            color:rgb(118,34,37);
+            border: 5px solid rgb(118,34,37);
+            font-weight:bolder;
+        }
+        .ospan {
+            display: block;
+            position:absolute;
+            top: 70px;
+            left: 250px
+        }
+
+        .finance {
+            background-color: rgb(118,34,36);
+            border: none;
+            border-radius: 10px;
+            outline:none;
+            color:#fdf3e8;
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Barlow', sans-serif;
+            font-size: 40px;
+            padding: 20px;
+            width: 650px;
+            height: 200px;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration:none;
+            display: block;
+            position: absolute;
+            top: 310px;
+            left: 770px;
+            -moz-box-shadow: 0px 0px 5px 3px #000;
+            -webkit-box-shadow: 0px 0px 5px 3px #000;
+            box-shadow: 0px 0px 5px 3px #000;
+        }
+
+        .fspan {
+            display: block;
+            position: absolute;
+            top: 70px;
+            left: 250px;
+        }
+
+        .finance:hover {
+            background-color: #fdf3e8;
+            color:rgb(118,34,37);
+            border: 5px solid rgb(118,34,37);
+            font-weight:bolder
+        }
+
+        .resource {
+            background-color: rgb(118,34,36);
+            border: none;
+            border-radius: 10px;
+            outline:none;
+            color:#fdf3e8;
+            text-align: center;
+            font-weight: 700;
+            font-family: 'Barlow', sans-serif;
+            font-size: 40px;
+            padding: 20px;
+            width: 900px;
+            height: 200px;
+            transition: all 0.3s;
+            cursor: pointer;
+            margin: 5px;
+            text-decoration:none;
+            display: block;
+            position: absolute;
+            top: 580px;
+            left: 300px;
+            -moz-box-shadow: 0px 0px 5px 3px #000;
+            -webkit-box-shadow: 0px 0px 5px 3px #000;
+            box-shadow: 0px 0px 5px 3px #000;
+        }
+
+        .rspan {
+            display: block;
+            position: absolute;
+            top: 70px;
+            left: 215px;
+        }
+
+        .resource:hover {
+            background-color: #fdf3e8;
+            color:rgb(118,34,37);
+            border: 5px solid rgb(118,34,37);
+            font-weight:bolder
+        }
+
+        .meep {
+            color:rgb(118,34,36);
+            font-family: 'Barlow', sans-serif;
+            background-color:#fdf3e8;
+            font-size: 40px;
+            display: block;
+            width: 100%;
+            height: 100vh;
+            align-items:center;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-weight:bolder;
+        }
+
+        h1 {
+            color: rgb(118,34,36);
+            font-family: 'Barlow', sans-serif;
+            position:absolute;
+            top: 0;
+            left: 10px;
+            font-size: 32px;
+            height: 300px;
+            width: 300px;
+            font-weight:700;
+        }
+    </style>
+</head>
+<body class="meep">
+    <nav>
+        <h1 class="logo">
+            HOWDY MANAGE
+        </h1>
+    </nav>
+    <div class="main-section">
+        <div class="headers">
+            <button class="orders" id="orders"><a href="manage2.html">
+                <span class="ospan">
+                    Orders
+                </span>
+            </a>
+            </button>
+            <button class="finance"><a href="revenueGeneratedChart.html">
+                <span class="fspan">
+                    Finance
+                </span>
+            </a>
+            </button>
+            <button class="resource"><a href='tips.html'>
+                <span class="rspan">
+                    Order Management Tips
+                </span>
+            </a>
+            </button>
+</html>

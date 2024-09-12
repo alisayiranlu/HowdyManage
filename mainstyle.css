@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  font-size: 35px;
+  transition: 0.1s;
+}
+
+.orders {
+  background-color: rgb(118,34,36);
+  border: none;
+  border-radius: 10px;
+  outline:none;
+  color:#fdf3e8;
+  font-weight: 400;
+  font-family: 'Barlow', sans-serif;
+  font-size: 30px;
+  padding: 40px;
+  width: 650px;
+  height: 640px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 15px;
+  text-decoration:none;
+  display: block;
+  position: absolute;
+  top: 170px;
+  left: 70px;
+}
+
+.ospan {
+  display: block;
+  position:absolute;
+  top: 20px;
+  left: 250px
+}
+
+.finance {
+  background-color: rgb(118,34,36);
+  border: none;
+  border-radius: 10px;
+  outline:none;
+  color:#fdf3e8;
+  text-align: center;
+  font-weight: 400;
+  font-family: 'Barlow', sans-serif;
+  font-size: 30px;
+  padding: 20px;
+  width: 650px;
+  height: 640px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration:none;
+  display: block;
+  position: absolute;
+  top: 180px;
+  left: 770px;
+}
+
+.fspan {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 250px;
+}
+
+iframe {
+  display: block;
+  position: absolute;
+  top: 55px;
+  left: 40px;
+  height: 325px;
+  width: 380px;
+}
+
+body {
+  color:rgb(118,34,36);
+  font-family: 'Barlow', sans-serif;
+  background-color:#fdf3e8;
+  font-size: 40px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+  height: 100vh;
+  align-items:center;
+  font-weight:bolder;
+}
+
+nav {
+  color: rgb(118,34,36);
+  font-family: 'Barlow', sans-serif;
+  position:absolute;
+  top: 0;
+  left: 15px;
+  font-size: 28px;
+  height: 300px;
+  width: 300px;
+  font-weight:700;
+}
+
+/*button:hover {
+  background-color:#fdf3e8;
+  transition: 0.3s;
+  border-color: rgb(118,34,36);
+}*/
+
+img {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  height: 130px;
+  width: 130px;
+}

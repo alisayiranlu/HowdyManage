@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap');
+        body {
+            font-family: Barlow, sans-serif;
+            font-size: 16px;
+            color: #333;
+        }
+
+        h1 {
+            font-family: 'Barlow', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #800000;
+        }
+
+        @font-face {
+            font-family: 'Barlow';
+            src: url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap') format('woff2');
+        }
